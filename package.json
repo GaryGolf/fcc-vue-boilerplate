@@ -1,0 +1,23 @@
+{
+  "name": "vue-boilerplate",
+  "version": "1.0.0",
+  "description": "vue.js webpack boilerplate",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GaryGolf/fcc-vue-boilerplate.git"
+  },
+  "keywords": [
+    "vue",
+    "boilerplate"
+  ],
+  "author": "GaryGolf",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/GaryGolf/fcc-vue-boilerplate/issues"
+  },
+  "homepage": "https://github.com/GaryGolf/fcc-vue-boilerplate#readme"
+}
