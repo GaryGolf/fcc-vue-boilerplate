@@ -19,5 +19,20 @@
   "bugs": {
     "url": "https://github.com/GaryGolf/fcc-vue-boilerplate/issues"
   },
-  "homepage": "https://github.com/GaryGolf/fcc-vue-boilerplate#readme"
+  "homepage": "https://github.com/GaryGolf/fcc-vue-boilerplate#readme",
+  "dependencies": {
+    "css-loader": "^1.0.0",
+    "style-loader": "^0.23.0",
+    "ts-loader": "^5.0.0",
+    "vue": "^2.5.17"
+  },
+  "devDependencies": {
+    "@types/node": "^10.9.4",
+    "@types/webpack": "^4.4.11",
+    "typescript": "^3.0.3",
+    "vue-loader": "^15.4.1",
+    "webpack": "^4.17.2",
+    "webpack-cli": "^3.1.0",
+    "webpack-dev-server": "^3.1.8"
+  }
 }
