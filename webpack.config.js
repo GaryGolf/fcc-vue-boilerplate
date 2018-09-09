@@ -15,7 +15,7 @@ const config = {
         test: /\.vue$/, 
         loader: 'vue-loader',
         options: {
-          loaders: { ts: 'ts-loader' },
+          preLoaders: { ts: 'ts-loader' },
           cssModules: {
             localIdentName: '[path][name]---[local]---[hash:base64:5]',
             camelCase: true
@@ -27,6 +27,7 @@ const config = {
     ]
   },
   resolve: {
+    alias: { vue: 'vue/dist/vue.js' },
     extensions: ['.ts', '.tsx', '.js', '.vue']
   },
   plugins: [
