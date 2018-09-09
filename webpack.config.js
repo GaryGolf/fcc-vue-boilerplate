@@ -1,7 +1,10 @@
 const path = require('path');
+const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const config = {
   entry: path.resolve(__dirname, './src/index.ts'),
+  mode: 'development',
   devtool: 'inline-source-map',
   devServer: {
     contentBase: './dist'
@@ -17,7 +20,7 @@ const config = {
     extensions: ['.ts', '.tsx', '.js', '.vue']
   },
   plugins: [
-    new HtmlWebPackPlugin({
+    new HtmlWebpackPlugin({
       template: path.resolve(__dirname, './template.html')
     }),
   ]
