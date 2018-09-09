@@ -3,6 +3,7 @@
     "target": "es5",
     "module": "commonjs",
     "lib": [ "dom", "esnext" ],
+    "strict": true,
     "allowSyntheticDefaultImports": true,
     "experimentalDecorators": true,
     "baseUrl": "./src"
