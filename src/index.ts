@@ -1,6 +1,9 @@
 import Vue from 'vue';
-import hello from './components/hello.vue'
+import Hello from './components/hello';
 
 new Vue({
-  el: '#app'
+  el: '#app',
+  components: {
+    'Hello': Hello
+  }
 })
