@@ -11,7 +11,16 @@ const config = {
   },
   module: {
     rules: [
-      { test: /\.vue$/, loader: 'vue-loader' },
+      { 
+        test: /\.vue$/, 
+        loader: 'vue-loader',
+        options: {
+          cssModules: {
+            localIdentName: '[path][name]---[local]---[hash:base64:5]',
+            camelCase: true
+          }
+        }
+      },
       { test: /\.tsx?$/, loader: 'ts-loader', exclude: /node_modules/ },
       { test: /\.css$/, loader: 'css-loader', exclude: /node_modules/ }
     ]
