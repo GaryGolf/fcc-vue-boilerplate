@@ -1,6 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const VueLoaderPlugin = require('vue-loader/lib/plugin');
 
 const config = {
   entry: path.resolve(__dirname, './src/index.ts'),
@@ -15,7 +16,7 @@ const config = {
         test: /\.vue$/, 
         loader: 'vue-loader',
         options: {
-          preLoaders: { ts: 'ts-loader' },
+          // preLoaders: { ts: 'ts-loader' },
           cssModules: {
             localIdentName: '[path][name]---[local]---[hash:base64:5]',
             camelCase: true
@@ -31,9 +32,10 @@ const config = {
     extensions: ['.ts', '.tsx', '.js', '.vue']
   },
   plugins: [
+    new VueLoaderPlugin(),
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, './template.html')
-    }),
+    })
   ]
 }
 
