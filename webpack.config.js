@@ -15,15 +15,20 @@ const config = {
       { 
         test: /\.vue$/, 
         loader: 'vue-loader',
-        options: {
-          // preLoaders: { ts: 'ts-loader' },
-          cssModules: {
-            localIdentName: '[path][name]---[local]---[hash:base64:5]',
-            camelCase: true
-          }
-        }
+        // options: {
+        //   // preLoaders: { ts: 'ts-loader' },
+        //   cssModules: {
+        //     localIdentName: '[path][name]---[local]---[hash:base64:5]',
+        //     camelCase: true
+        //   }
+        // }
       },
-      { test: /\.tsx?$/, loader: 'ts-loader', exclude: /node_modules/ },
+      { 
+        test: /\.tsx?$/, 
+        loader: 'ts-loader', 
+        options: { appendTsSuffixTo: [/\.vue$/] },
+        exclude: /node_modules/ 
+      },
       { test: /\.css$/, loader: 'css-loader', exclude: /node_modules/ }
     ]
   },

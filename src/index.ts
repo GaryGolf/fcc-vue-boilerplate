@@ -1,28 +1,29 @@
 import Vue from 'vue';
 import Hello from './components/hello.vue';
 import Component from 'vue-class-component';
+import App from './index.vue';
 
-// new Vue({
-//  render: createElement => createElement(Hello)
-// }).$mount('#app');
 
-// new Vue({
-//   el: '#app',
-//   components: {
-//     Hello
-//   }
-// })
+
+console.log('qq');
+
+new Vue({
+  el: '#app',
+  template: '<div>{{ hi }}</div>'
+})
+
+
 
 // @Component({
 //   components: {
 //     Hello
 //   }
 // })
-@Component
-class App extends Vue {
-  mounted () {
-    console.log('mounted')
-  }
-}
+// @Component
+// class App extends Vue {
+//   mounted () {
+//     console.log('mounted')
+//   }
+// }
 
-export const app = new App().$mount('#app');
+// export const app = new App().$mount('#app');
