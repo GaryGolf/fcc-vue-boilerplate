@@ -1,11 +1,13 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "module": "commonjs",
-    "lib": [ "dom", "esnext" ],
+    "module": "esnext",
     "strict": true,
     "allowSyntheticDefaultImports": true,
     "experimentalDecorators": true,
-    "baseUrl": "./src"
+    "esModuleInterop": true,
+    "sourceMap": true,
+    "baseUrl": ".",
+    "lib": [ "dom", "esnext" ]
   }
 }
