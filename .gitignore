@@ -20,6 +20,12 @@ coverage
 # nyc test coverage
 .nyc_output
 
+# Compiled files
+dist
+
+# Cache files
+.cache-loader
+
 # Grunt intermediate storage (http://gruntjs.com/creating-plugins#storing-task-files)
 .grunt
 

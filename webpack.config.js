@@ -2,34 +2,68 @@ const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
+const threadLoader = require('thread-loader');
+
+threadLoader.warmup({},[
+  'vue-loader', 'css-loader'
+]);
 
 const config = {
-  entry: path.resolve(__dirname, './src/index.ts'),
   mode: 'development',
+  entry: path.resolve(__dirname, './src/index.ts'),
+  output: { filename: 'dist/index.js' },
   devtool: 'inline-source-map',
   devServer: {
-    contentBase: './dist'
+    contentBase: path.join(__dirname, 'dist'),
+    port: 3000,
+    hot: true
   },
   module: {
     rules: [
       { 
         test: /\.vue$/, 
-        loader: 'vue-loader',
-        // options: {
-        //   // preLoaders: { ts: 'ts-loader' },
-        //   cssModules: {
-        //     localIdentName: '[path][name]---[local]---[hash:base64:5]',
-        //     camelCase: true
-        //   }
-        // }
-      },
-      { 
+        use: [
+          { 
+            loader: 'thread-loader',
+            options: {
+              name: 'vue-loader-pool',
+              workers: require('os').cpus().length - 1
+            }
+          },{
+            loader: 'vue-loader',
+            options: {
+              cssModules: {
+                localIdentName: '[path][name]---[local]---[hash:base64:5]',
+                camelCase: true
+              }
+            }
+          }
+        ]
+      },{ 
         test: /\.tsx?$/, 
-        loader: 'ts-loader', 
-        options: { appendTsSuffixTo: [/\.vue$/] },
+        use: [
+          {
+            loader: 'cache-loader'
+          },{
+            loader: 'thread-loader',
+            options: {
+              name: 'ts-loader-pool',
+              workers: require('os').cpus().length - 1
+            }
+          },{
+            loader: 'ts-loader',
+            options: { 
+              happyPackMode: true,
+              appendTsSuffixTo: [/\.vue$/] 
+            },
+          }
+        ],
         exclude: /node_modules/ 
-      },
-      { test: /\.css$/, loader: 'css-loader', exclude: /node_modules/ }
+      },{ 
+        test: /\.css$/, 
+        use: [ 'thread-loader', 'css-loader' ], 
+        exclude: /node_modules/ 
+      }
     ]
   },
   resolve: {
