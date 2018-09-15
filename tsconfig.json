@@ -6,6 +6,7 @@
     "allowSyntheticDefaultImports": true,
     "experimentalDecorators": true,
     "esModuleInterop": true,
+    "moduleResolution": "node",
     "sourceMap": true,
     "baseUrl": ".",
     "lib": [ "dom", "esnext" ]
