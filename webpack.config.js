@@ -61,7 +61,7 @@ const config = {
         exclude: /node_modules/ 
       },{ 
         test: /\.css$/, 
-        use: [ 'thread-loader', 'css-loader' ], 
+        use: [ 'thread-loader',  'vue-style-loader', 'css-loader' ], 
         exclude: /node_modules/ 
       }
     ]
