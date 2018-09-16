@@ -5,5 +5,8 @@
 <style>
   .button {
     padding: 1rem 2rem;
+    color: navy;
+    text-decoration: underline;
+    cursor: pointer;
   }
 </style>

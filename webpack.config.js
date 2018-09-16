@@ -5,7 +5,7 @@ const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const threadLoader = require('thread-loader');
 
 threadLoader.warmup({},[
-  'vue-loader', 'css-loader'
+  'vue-loader', 'vue-style-loader', 'css-loader'
 ]);
 
 const config = {
