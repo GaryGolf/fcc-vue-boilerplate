@@ -1,6 +1,11 @@
 import { Vue, Component, Emit } from 'vue-property-decorator';
+import Description from './description.vue'
 
-@Component 
+@Component({
+  components: {
+    qqDescription: Description
+  }
+})
 export default class Hello extends Vue {
   private message: string = 'Hello Vue!';
   private disabled: boolean = false;
