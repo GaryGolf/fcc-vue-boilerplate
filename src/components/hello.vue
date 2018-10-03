@@ -1,12 +1,3 @@
-<template>
-  <button class="button" @click="onClick">Click!</button>
-</template>
+<template src="./hello.html" />
 <script lang="ts" src="./hello.ts" />
-<style>
-  .button {
-    padding: 1rem 2rem;
-    color: navy;
-    text-decoration: underline;
-    cursor: pointer;
-  }
-</style>
+<style src="./hello.css" />
