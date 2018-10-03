@@ -1,4 +1,9 @@
 <div>
   <div>{{ message }}</div>
-  <button class="button" @click="onClick">Click!</button>
+  <button 
+    class="button" 
+    :title="message"
+    @click="onClick">
+    Click!
+  </button>
 </div>
