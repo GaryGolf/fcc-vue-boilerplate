@@ -5,13 +5,16 @@ export default class Hello extends Vue {
   private message: string = 'Hello Vue!';
   private disabled: boolean = false;
 
-  onClick = ():void => {
-    this.disableButton(true);
+  private created() {
+    console.log('hello component created');
+  }
+
+  private onClick():void {
+    this.disabled = true;
     setTimeout(() => { 
-      this.disableButton(false) 
-      this.setMessage('Привет Вуй!');
+      this.disabled = false;
+      this.message = 'Привет Вуй!';
     }, 2000);
   }
-  @Emit() private setMessage(message: string):void { this.message = message };
-  @Emit() private disableButton(value: boolean):void { this.disabled = value };
+  
 }
