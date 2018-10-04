@@ -20,6 +20,5 @@ export default class Hello extends Vue {
       this.disabled = false;
       this.message = 'Привет Вуй!';
     }, 2000);
-  }
-  
+  }  
 }
