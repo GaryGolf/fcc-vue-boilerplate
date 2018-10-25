@@ -19,3 +19,4 @@ new Vue({
   store,
   render: create => create(Hello)
 }).$mount('#app')
+
