@@ -4,16 +4,18 @@ import Vuex from 'vuex';
 
 Vue.config.productionTip = false;
 
-const store = new Vuex.Store({
-  state: {
-    message: 'hello'
-  },
-  mutations: {
-    change (state) {
-      state.message = 'hello vuex'
-    }
-  }
-})
+import { store } from './store'
+
+// const store = new Vuex.Store({
+//   state: {
+//     message: 'hello'
+//   },
+//   mutations: {
+//     change (state) {
+//       state.message = 'hello vuex'
+//     }
+//   }
+// })
 
 new Vue({
   store,

@@ -1,5 +1,10 @@
 <template>
-  <pre>{{ message }}</pre>
+  <div>
+    <pre>{{ message }}</pre>
+    <button @click="this.$store.commit('change')">
+      Change
+    </button>
+  </div>
 </template>
   
 <script lang="ts" >
