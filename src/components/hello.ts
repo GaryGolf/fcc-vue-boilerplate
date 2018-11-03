@@ -6,6 +6,7 @@ import Description from './description.vue'
     qqDescription: Description
   }
 })
+
 export default class Hello extends Vue {
   private message: string = 'Hello Vue!';
   private disabled: boolean = false;
